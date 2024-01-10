@@ -1,0 +1,6 @@
+﻿Nome | Piattaforma | Data d'acquisto | Luogo d'acquisto | Prezzo
+Fallout 4 | Steam | 2020-07-12 | Instant-gaming | 12.90
+Fallout 4 | PS5 | 2018-05-21 | PS Store | 38.70
+Fifa 20 | X-Box One | 2021-01-01 | Microsoft Store | 45.00
+Final Fantasy VII - Rebirth | PS5 | 2024-01-10 | PS Store | 80.00
+Assassin's Credd 2 | Ubisoft Connect | 2010-10-21 | Instant-gaming | 35.00
