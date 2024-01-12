@@ -27,15 +27,13 @@ public static class GameUnitRefact
     private static string ReplaceChar(this string name)
     {
         string gameID = string.Empty;
-
+        char temp  = '-'; // creo un char temporaneo, il - è come viene inizializato temp
         foreach (char c in name)
         {
-            //if (c == '_' && c == 'c')
-            //{
-            //}
-            if ((char.IsLetterOrDigit(c) || c == '&') || (c == '-' && c != c-1))
+            if ((char.IsLetterOrDigit(c) || c == '&') || (c == '-' && c != temp))//se c è nei caratteri consentiti, o è = a & passa, poi se è = a - e temp è diverso da c passa
             {
                 gameID += c;
+                temp = c;//ogni volta che il ciclo passa i controlli riscrive temp cosi da avere sempre il carattere passato prima
             }
             
         }
