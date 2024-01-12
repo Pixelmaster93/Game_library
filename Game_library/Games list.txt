@@ -1,4 +1,4 @@
-﻿Nome | Piattaforma | Data d'acquisto | Luogo d'acquisto | Prezzo
+﻿Name | Platform | Data of buy | Luogo d'acquisto | Price in €
 Fallout 4 | Steam | 2020-07-12 | Instant-gaming | 12.90
 Fallout 4 | PS5 | 2018-05-21 | PS Store | 38.70
 Fifa 20 | X-Box One | 2021-01-01 | Microsoft Store | 45.00
