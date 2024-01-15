@@ -11,6 +11,8 @@ namespace GameLibraryTestSuit
         [InlineData("The legend of Zelda - Ocarina of time", "THE-LEGEND-OF-ZELDA-OCARINA-OF-TIME")]
         [InlineData(" God of War Ragnarök! " , "GOD-OF-WAR-RAGNAROK")]
         [InlineData("-Baldur's Gate 3-", "BALDURS-GATE-3")]
+        [InlineData("---Baldur's Gate 3--", "BALDURS-GATE-3")]
+        [InlineData("- - - Baldur's Gate 3--", "BALDURS-GATE-3")]
         public void CreateGameID_should_work(string gameName, string expected)
         {
             string gameId = GameUnitRefact.CreateGameID(gameName);
