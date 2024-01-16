@@ -4,7 +4,7 @@ public class Store
 {
     public string Name { get; }
     public string Description { get; }
-    public Uri? WebSite{ get; }
+    public Uri? WebSite { get; }
 
     public Store(string name, string? description, Uri? webSite)
     {
