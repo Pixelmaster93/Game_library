@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameLibrary.Import.Txt
 {
-    internal class TextFilePlatformImporter
+    public class TextFilePlatformImporter
     {
         private readonly string _fileName;
 

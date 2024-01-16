@@ -1,0 +1,5 @@
+﻿Name | Description
+Ps5 | Console
+X-box serie x | Console
+GoG | Pc Launcher 
+Steam | Pc Launcher
