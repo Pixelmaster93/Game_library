@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,12 +30,14 @@ namespace GameLibrary.Import.Txt
             .Where(line => !string.IsNullOrEmpty(line))
             .Distinct()
             .Select(BuildTransactionFromLine)
-            .ToArray;
+            .ToArray();
 
-        private Transaction BuildTransactionFromLine(string line)
+
+        public Transaction BuildTransactionFromLine(string line)
         {
             string[] parts = line.Split('|', StringSplitOptions.TrimEntries);
             DateTime PurchaseDate = ParseData(parts[0]);
+
             bool isVirtual = ParseBool(parts[1]);
 
             Store? store = GetStoreFromName(parts[2]);
@@ -55,11 +58,21 @@ namespace GameLibrary.Import.Txt
             if (store is null)
             {
                 throw
-                    new Exception($"The store {parts[4]} does not exist");
+                    new Exception($"The platform {parts[4]} does not exist");
             }
 
-            return new Transaction(PurchaseDate, isVirtual, store, game, platform, price, currency);
+            decimal price = decimal.Parse(parts[5]);
+
+            string currency = parts[6];
+            if(!Enum.TryParse(currency, out CurrencyType currencyEnum))
+            {
+                throw
+                     new Exception($"The currency {parts[6]} does not exist");
+            }
+            return new Transaction(PurchaseDate, isVirtual, store, game, platform, price, currencyEnum);
         }
+
+
 
         private static DateTime ParseData(string line) =>
             DateTime.ParseExact(line, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
@@ -84,7 +97,7 @@ namespace GameLibrary.Import.Txt
         }
         */
 
-        private Store? GetStoreFromName(string name) =>
+        private Store? GetStoreFromName(string name) => //LinQ di quello sopra
             _stores
             .FirstOrDefault(s => string.Equals( s.Name, name, StringComparison.CurrentCultureIgnoreCase));
 

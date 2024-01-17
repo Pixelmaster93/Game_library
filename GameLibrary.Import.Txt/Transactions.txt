@@ -1,0 +1,3 @@
+﻿Purchase Date | Is Visrtual | Store | Game | Platform | Price | Currency
+2024-02-12 | false | Steam | Alan Wake 2 | Ps5 | 65.00 | Eur
+2012-06-01 | true | eShop | The Legend of Zelda: Ocarina of Time | Nintendo Switch | 12.98 | Eur

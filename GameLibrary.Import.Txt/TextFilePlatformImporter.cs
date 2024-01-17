@@ -15,7 +15,7 @@ namespace GameLibrary.Import.Txt
         {
             _fileName = fileName;
         }
-        public Platform[] GetGame() =>
+        public Platform[] GetPlatform() =>
             File
             .ReadAllLines(_fileName)
             .Skip(1)
