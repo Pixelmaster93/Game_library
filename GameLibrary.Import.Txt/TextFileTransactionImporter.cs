@@ -23,7 +23,7 @@ namespace GameLibrary.Import.Txt
             _platforms = platforms;
         }
 
-        public Transaction[] GetTransaction() =>
+        public Transaction[] GetTransactions() =>
             File
             .ReadAllLines(_fileName)
             .Skip(1)
@@ -61,7 +61,7 @@ namespace GameLibrary.Import.Txt
                     new Exception($"The platform {parts[4]} does not exist");
             }
 
-            decimal price = decimal.Parse(parts[5]);
+            decimal price = decimal.Parse(parts[5], System.Globalization.CultureInfo.InvariantCulture);
 
             string currency = parts[6];
             if(!Enum.TryParse(currency, out CurrencyType currencyEnum))
