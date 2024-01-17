@@ -1,6 +1,9 @@
 ﻿namespace Game_library;
 
-public class PayamentMethod
+public enum CurrencyType
 {
-    
+    Eur,
+    Dollar,
+    Pound
 }
+
